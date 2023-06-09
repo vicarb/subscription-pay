@@ -1,6 +1,6 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Plan = ({ plan, price, features }) => (
   <div className="flex flex-col bg-white shadow-md rounded-lg p-6 m-3 flex-grow max-w-sm">
@@ -43,10 +43,13 @@ const PricingTable = () => {
   ];
 
   return (
-    <div className="flex flex-col items-stretch md:flex-row md:justify-center md:flex-wrap">
-      {plans.map((plan, index) => (
-        <Plan key={index} plan={plan.name} price={plan.price} features={plan.features} />
-      ))}
+    <div className="flex flex-col items-center mt-12">
+      <h1 className="text-4xl font-bold mb-8 text-center">Our Plans</h1>
+      <div className="flex flex-col items-stretch md:flex-row md:justify-center md:flex-wrap">
+        {plans.map((plan, index) => (
+          <Plan key={index} plan={plan.name} price={plan.price} features={plan.features} />
+        ))}
+      </div>
     </div>
   );
 };
